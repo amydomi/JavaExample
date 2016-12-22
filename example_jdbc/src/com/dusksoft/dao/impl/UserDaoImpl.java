@@ -30,6 +30,8 @@ public class UserDaoImpl implements UserDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DbUtil.closeConnection(conn);
 		}
 		return 0;
 	}
@@ -47,6 +49,8 @@ public class UserDaoImpl implements UserDao {
 			return psmt.getUpdateCount() > 0 ? true : false;
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DbUtil.closeConnection(conn);
 		}
 		return false;
 	}
@@ -63,6 +67,8 @@ public class UserDaoImpl implements UserDao {
 			return count > 0 ? true : false;
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DbUtil.closeConnection(conn);
 		}
 		return false;
 	}
@@ -85,6 +91,8 @@ public class UserDaoImpl implements UserDao {
 			return dataList;
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DbUtil.closeConnection(conn);
 		}
 		return null;
 	}
@@ -107,6 +115,8 @@ public class UserDaoImpl implements UserDao {
 			return null;
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DbUtil.closeConnection(conn);
 		}
 		return null;
 	}
